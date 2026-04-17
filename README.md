@@ -64,6 +64,12 @@ This project is built with:
 
 Simply open [Lovable](https://lovable.dev/projects/8e0d5c62-4222-4a1d-b61f-d6c823eee3cb) and click on Share -> Publish.
 
+### Admin route on Vercel (`/admin` 404)
+
+This app uses client-side routing. On Vercel, visiting `/admin` directly must serve `index.html` so React Router can run. The repo includes `vercel.json` with a rewrite for that. After adding or changing it, redeploy so `https://your-domain/admin` loads the app instead of a 404.
+
+Admin access still requires signing in on that page with a Supabase user whose `profiles.is_admin` is `true`.
+
 ## Can I connect a custom domain to my Lovable project?
 
 Yes, you can!
